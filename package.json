@@ -7,9 +7,18 @@
   "scripts": {
     "test": "jest"
   },
-  "author": "Szymon Hyziak",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hyziu-03/Isola.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hyziu-03/Isola/issues"
+  },
+  "author": "Szymon Hyziak <szymon.hyziak@protonmail.com>",
   "license": "ISC",
+  "keywords": [],
   "devDependencies": {
     "jest": "^28.1.2"
-  }
+  },
+  "homepage": "https://github.com/Hyziu-03/Isola"
 }
