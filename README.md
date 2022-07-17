@@ -2,7 +2,9 @@
  
 A three module JavaScript library made by Szymon Hyziak
 
-## Module 1: browser
+## Module 1 (browser)
+
+Tools for working with the browser on the frontend
 
 ### Functions 
 
@@ -19,7 +21,9 @@ A three module JavaScript library made by Szymon Hyziak
 - fadeIn()
 - fadeOut()
 
-## Module 2: utilities
+## Module 2 (utilities)
+
+Common programming issues have been adressed in this part of the package
 
 ### Functions
 
@@ -32,7 +36,9 @@ A three module JavaScript library made by Szymon Hyziak
 - getRandomElement()
 - getTime()
 
-### Module 3: easter-eggs
+## Module 3: (easter-eggs)
+
+Making use of some funny JavaScript snippets
 
 ### Functions
 
