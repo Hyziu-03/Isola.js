@@ -16,7 +16,11 @@
   },
   "author": "Szymon Hyziak <szymon.hyziak@protonmail.com>",
   "license": "ISC",
-  "keywords": [],
+  "keywords": [
+    "browser", 
+    "utilites", 
+    "easter eggs"
+  ],
   "devDependencies": {
     "jest": "^28.1.2"
   },
