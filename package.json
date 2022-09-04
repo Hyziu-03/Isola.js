@@ -1,6 +1,6 @@
 {
   "name": "isola",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A JavaScript library made by Szymon Hyziak",
   "main": "index.js",
   "type": "module",
@@ -17,8 +17,8 @@
   "author": "Szymon Hyziak <szymon.hyziak@protonmail.com>",
   "license": "ISC",
   "keywords": [
-    "browser", 
-    "utilites", 
+    "browser",
+    "utilites",
     "easter eggs"
   ],
   "devDependencies": {
