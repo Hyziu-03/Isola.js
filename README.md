@@ -60,19 +60,35 @@ Common programming issues have been adressed in this part of the package
 
 ### generateRandomColor()
 
+Create a random hexadecimal value representing a colour
+
 ### shuffleArray()
+
+Change the order of elements of any type in an array
 
 ### sleep()
 
+Not doing anything for the time given
+
 ### generateRandomNumberInRange()
+
+Making sure that the given name is a correct one
 
 ### validateName()
 
+Create a number in the given range
+
 ### reverseString()
+
+Invert the string
 
 ### getRandomElement()
 
+Choose a random item from an array
+
 ### getTime()
+
+Inspect the current time
 
 ## Module 3: (easter-eggs)
 
@@ -80,6 +96,12 @@ Making use of some funny JavaScript snippets
 
 ### getFloatingPointNumber()
 
+Get the number 0.30000000000000004
+
 ### getBanana()
 
+Get the word "banana"
+
 ### fail()
+
+Get the string "fail"
