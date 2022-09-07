@@ -24,5 +24,9 @@
   "devDependencies": {
     "jest": "^28.1.2"
   },
-  "homepage": "https://github.com/Hyziu-03/Isola"
+  "homepage": "https://github.com/Hyziu-03/Isola",
+  "dependencies": {
+    "email-validator": "^2.0.4",
+    "validator": "^13.7.0"
+  }
 }
