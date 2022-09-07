@@ -11,6 +11,18 @@ export const setLocation = (location) => {
 };
 
 /**
+ * Change title of the page visible on tab 
+ * @param {string} title 
+ */
+export const setPageTitle = (title) => {
+    try {
+        document.title = title;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+/**
  * Reload the page
  */
 export const refresh = () => {

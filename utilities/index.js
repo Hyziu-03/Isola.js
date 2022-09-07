@@ -1,3 +1,6 @@
+import validator from "validator";
+import * as EmailValidator from "email-validator";
+
 /**
  * Create a random hexadecimal value representing a colour
  * @returns {string} Random hexadecimal colour value
@@ -113,3 +116,36 @@ export const getTime = () => {
         console.error(error);
     }
 }
+
+/**
+ * Making sure the password is strong enough
+ * @param {string} password 
+ * @returns {boolean}
+ */
+export const validatePassword = (password) => {
+    try {
+        const isStrong = validator.isStrongPassword(password, {
+            minLength: 9,
+            minUppercase: 1,
+            minLowercase: 1,
+            minNumbers: 1,
+            minSymbols: 1
+        });
+        return isStrong;
+    } catch (error) {
+        console.error(error);
+    }
+};
+
+/**
+ * Making sure the email is correct
+ * @param {string} email 
+ * @returns {boolean}
+ */
+export const validateEmail = (email) => {
+    try {
+        return EmailValidator.validate(email);
+    } catch (error) {
+        console.error(error);
+    }
+};

@@ -6,6 +6,10 @@ A three module JavaScript library made by Szymon Hyziak
 
 Tools for working with the browser on the frontend
 
+### setPageTitle()
+
+Change title of the page visible on tab 
+
 ### setLocation()
 
 Change the current page's URL
@@ -81,6 +85,14 @@ Create a number in the given range
 ### reverseString()
 
 Invert the string
+
+### validatePassword()
+
+Making sure the password is strong enough
+
+### validateEmail()
+
+Making sure the email is correct
 
 ### getRandomElement()
 
