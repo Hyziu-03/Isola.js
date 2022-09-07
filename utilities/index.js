@@ -99,9 +99,9 @@ export const getRandomElement = (array) => {
 export const getTime = () => {
     try {
         const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        let seconds = now.getSeconds();
 
         if (seconds) seconds = "0" + seconds;
         if (minutes < 10) minutes = "0" + minutes;
