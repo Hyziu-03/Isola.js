@@ -1,6 +1,8 @@
-# Isola
+# Isola.js
  
-A three module JavaScript library made by Szymon Hyziak
+A three module JavaScript library made by Szymon Hyziak. 
+
+Read up on it here: https://isolajs.web.app
 
 ## Module 1 (browser)
 
