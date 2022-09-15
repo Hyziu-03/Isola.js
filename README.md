@@ -102,7 +102,7 @@ Choose a random item from an array
 
 Inspect the current time
 
-## Module 3: (easter-eggs)
+## Module 3 (easter-eggs)
 
 Making use of some funny JavaScript snippets
 
@@ -112,7 +112,7 @@ Get the number 0.30000000000000004
 
 ### getBanana()
 
-Get the word "banana"
+Get the string "banana"
 
 ### fail()
 
