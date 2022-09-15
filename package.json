@@ -1,6 +1,6 @@
 {
   "name": "isola",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A JavaScript library made by Szymon Hyziak",
   "main": "index.js",
   "type": "module",
