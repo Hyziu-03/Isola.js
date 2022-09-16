@@ -1,5 +1,4 @@
 import validator from "validator";
-import * as EmailValidator from "email-validator";
 
 /**
  * Create a random hexadecimal value representing a colour
@@ -144,7 +143,7 @@ export const validatePassword = (password) => {
  */
 export const validateEmail = (email) => {
     try {
-        return EmailValidator.validate(email);
+        return validator.isEmail(email);
     } catch (error) {
         console.error(error);
     }
