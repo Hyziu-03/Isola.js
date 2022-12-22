@@ -3,7 +3,8 @@ import {
     generateRandomNumberInRange,
     getRandomElement,
     reverseString,
-    validateName
+    validateName,
+    getEmailDomain
 } from "../utilities/index";
 
 test("generating random color that is not null", () => expect(generateRandomColor()).not.toBeNull());
@@ -29,3 +30,13 @@ test("validating function with a falsy argument", () => expect(validateName("", 
 test("validating function with an array argument", () => expect(validateName("Daria", [])).toBe(false));
 test("validating function with a number argument", () => expect(validateName(123, "Zawiałow")).toBe(false));
 test("validating function with a null argument", () => expect(validateName("Daria", null)).toBe(false));
+
+// not tested yet
+
+test("getting a domain from a valid email adress", function () {
+    expect(getEmailDomain("szymonhyziak@student.agh.ed.pl")).toBe("student.agh.edu.pl");
+});
+
+test("getting a domain from an invalid email adress", function () {
+    expect(getEmailDomain("szymon@hyziak")).toBeNull;
+});

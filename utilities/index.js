@@ -148,3 +148,41 @@ export const validateEmail = (email) => {
         console.error(error);
     }
 };
+
+// not tested yet 
+// lacks documentation
+
+export const getEmailDomain = (email) => {
+    try {
+        const isValid = validateEmail(email);
+        if (!isValid) {
+            throw new Error("This email adress is invalid");
+            return null;
+        } else {
+            return email.split("@")[1];
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const removeDuplicates = (array) => {
+    try {
+        return [...new Set(array)];
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const generateOTP = (length) => {
+    try {
+        let otp = "";
+        const digits = "0123456789";
+        for (let i = 0; i < length; i++) {
+            otp += digits[Math.floor(Math.random() * 10)];
+        }
+        return otp;
+    } catch (error) {
+        console.error(error);
+    }
+}
