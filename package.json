@@ -1,7 +1,7 @@
 {
   "name": "isola",
   "version": "1.2.2",
-  "description": "A JavaScript library made by Szymon Hyziak",
+  "description": "A web development oriented multi purpose JavaScript library",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,22 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Hyziu-03/Isola.git"
+    "url": "https://github.com/Hyziu-03/Isola.js.git"
   },
   "bugs": {
-    "url": "https://github.com/Hyziu-03/Isola/issues"
+    "url": "https://github.com/Hyziu-03/Isola.js/issues"
   },
   "author": "Szymon Hyziak <szymon.hyziak@protonmail.com>",
   "license": "ISC",
-  "keywords": [
-    "browser",
-    "utilites",
-    "easter eggs"
-  ],
   "devDependencies": {
     "jest": "^28.1.2"
   },
-  "homepage": "https://github.com/Hyziu-03/Isola",
+  "homepage": "https://github.com/Hyziu-03/Isola.js",
   "dependencies": {
     "validator": "^13.7.0"
   }
