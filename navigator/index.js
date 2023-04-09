@@ -5,7 +5,9 @@
 export const setLocation = (location) => {
   try {
     const invalidValues = ["", null, undefined];
-    if (location in invalidValues || typeof location !== "string") return;
+    if (location in invalidValues || typeof location !== "string") {
+      throw new Error("Could not change the page's URL");
+    };
     window.location.href = location;
   } catch (error) {
     console.error(error);
@@ -19,7 +21,9 @@ export const setLocation = (location) => {
 export const setPageTitle = (title) => {
   try {
     const invalidValues = ["", null, undefined];
-    if (title in invalidValues || typeof title !== "string") return;
+    if (title in invalidValues || typeof title !== "string") {
+      throw new Error("Could not change the page's title");
+    }
     document.title = title;
   } catch (error) {
     console.error(error);
@@ -121,7 +125,9 @@ export const getPrefferedTheme = () => {
  */
 export const getOffset = (element) => {
   try {
-    if(element instanceof HTMLElement === false) return;
+    if(element instanceof HTMLElement === false) {
+      throw new Error("Could not get offset on something that is not an HTML element");
+    };
     const box = element.getBoundingClientRect();
     const client = {
       top: document.documentElement.clientTop,
@@ -158,7 +164,12 @@ export const doesExist = (element) => {
  */
 export const fadeOut = (element, ms) => {
   try {
-    if (!ms) return;
+    if (!ms || typeof ms !== "number") {
+      throw new Error("Invalid argument was given to the fade out animation");
+    }
+    if (element instanceof HTMLElement === false) {
+      throw new Error("Could not animate something that is not an HTML element");
+    }
     element.style.transition = `opacity ${ms} ms`;
     element.addEventListener(
       "transitionend",

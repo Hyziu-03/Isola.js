@@ -36,7 +36,9 @@ export const shuffleArray = (array) => {
  */
 export const sleep = (ms) => {
   try {
-    if(typeof ms !== "number") return;
+    if(typeof ms !== "number") {
+      throw new Error("Could not set a promise to resolve in a non-number value");
+    }
     return new Promise((resolve) => setTimeout(resolve, ms));
   } catch (error) {
     console.error(error);
@@ -68,8 +70,12 @@ export const validateName = (firstName, lastName) => {
  */
 export const generateRandomNumberInRange = (minimum, maximum) => {
   try {
-    if(typeof minimum !== "number" || typeof maximum !== "number") return;
-    if(minimum > maximum) return;
+    if(typeof minimum !== "number" || typeof maximum !== "number") {
+      throw new Error("Could not generate a random number in a non-number range");
+    }
+    if(minimum > maximum) {
+      throw new Error("Invalid number range was given");
+    }
     const randomNumberInRange =
       Math.floor(Math.random() * (maximum - minimum) + 1) + minimum;
     return randomNumberInRange;
@@ -98,7 +104,9 @@ export const reverseString = (string) => {
  */
 export const getRandomElement = (array) => {
   try {
-    if(array instanceof Array === false || array.length === 0) return;
+    if(array instanceof Array === false || array.length === 0) {
+      throw new Error("Could not get a random element from an empty array or a non-array value");
+    }
     const index = Math.floor(Math.random() * array.length);
     return array[index];
   } catch (error) {
@@ -170,8 +178,8 @@ export const getEmailDomain = (email) => {
   try {
     const isValid = validateEmail(email);
     if (!isValid) {
-      throw new Error("This email adress is invalid");
-      return null;
+      throw new Error("Cannot get the domain of an invalid email adress");
+      return "";
     } else {
       return email.split("@")[1];
     }
@@ -187,6 +195,9 @@ export const getEmailDomain = (email) => {
  */
 export const removeDuplicates = (array) => {
   try {
+    if (array instanceof Array === false || array.length === 0) {
+      throw new Error("Could not remove duplicates from an empty array or a non-array value");
+    }
     return [...new Set(array)];
   } catch (error) {
     console.error(error);
@@ -200,6 +211,9 @@ export const removeDuplicates = (array) => {
  */
 export const generateOTP = (length) => {
   try {
+    if(typeof length !== "number") {
+      throw new Error("Could not generate a one-time-password with a non-number length");
+    }
     let otp = "";
     const digits = "0123456789";
     for (let i = 0; i < length; i++) {
