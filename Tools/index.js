@@ -23,9 +23,10 @@ export const generateRandomColor = () => {
  */
 export const shuffleArray = (array) => {
   try {
-    array.sort(() => Math.random() - 0.5);
+    return array.sort(() => Math.random() - 0.5);
   } catch (error) {
     console.error(error);
+    return array;
   }
 };
 
@@ -53,9 +54,13 @@ export const sleep = (ms) => {
  */
 export const validateName = (firstName, lastName) => {
   try {
-    const rule = /[a-zA-Z]/g;
-    if (rule.test(firstName) === false || rule.test(lastName) === false)
-      return false;
+    const containsLetters = /[a-zA-Z]/g;
+    const containsNumbers = /\d/g;
+
+    const isNotAlphabetical = containsLetters.test(firstName) === false || containsLetters.test(lastName) === false;
+    const isNumerical = containsNumbers.test(firstName) || containsNumbers.test(lastName);
+    
+    if(isNotAlphabetical || isNumerical) return false;
     else return !!firstName && !!lastName;
   } catch (error) {
     console.error(error);
