@@ -1,3 +1,5 @@
+// Current test coverage for navigator is 1/43
+
 /**
  * Get the word "banana"
  * @returns {string} "banana"

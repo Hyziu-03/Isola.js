@@ -15,3 +15,10 @@ That's how you install Isola.js via npm:
 ```bash
 npm install isola
 ```
+
+### Percent of code covered by tests
+
+Current test coverage for tools is 70/234 ~ 30%
+Current test coverage for navigator is 1/211 ~ 0.5%
+Current test coverage for navigator is 1/43 ~ 2.3%
+Therefore the total test coverage is 72/488 ~ 14.75%

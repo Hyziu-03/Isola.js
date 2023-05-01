@@ -67,6 +67,8 @@ export const validateName = (firstName, lastName) => {
   }
 };
 
+// Current test coverage for tools is 70/234 
+
 /**
  * Create a number in the given range
  * @param {number} The smallest value of the range
