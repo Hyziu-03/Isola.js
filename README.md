@@ -2,6 +2,9 @@
 
 A web development oriented multi purpose JavaScript library. Created by Szymon Hyziak. Read up on it here: <https://isolajs.web.app>
 
+> It was time for Isola.js from July 9th 2022 to March 20th 2023.
+> Now it is time for Isola.js 2.0!
+
 ## Read docs online
 
 Constantly maintained documentation is available in the library's repository. Direct link to npm will be added shortly.
