@@ -1,3 +1,5 @@
+// Current test coverage for navigator is 1/211
+
 /**
  * Change the current page's URL
  * @param {string} location New URL
@@ -7,7 +9,7 @@ export const setLocation = (location) => {
     const invalidValues = ["", null, undefined];
     if (location in invalidValues || typeof location !== "string") {
       throw new Error("Could not change the page's URL");
-    };
+    }
     window.location.href = location;
   } catch (error) {
     console.error(error);
@@ -70,7 +72,7 @@ export const goBack = () => {
 export const getSelection = () => {
   try {
     const selection = window.getSelection().toString();
-    if(selection) return selection;
+    if (selection) return selection;
     return "";
   } catch (error) {
     console.error(error);
@@ -125,9 +127,11 @@ export const getPrefferedTheme = () => {
  */
 export const getOffset = (element) => {
   try {
-    if(element instanceof HTMLElement === false) {
-      throw new Error("Could not get offset on something that is not an HTML element");
-    };
+    if (element instanceof HTMLElement === false) {
+      throw new Error(
+        "Could not get offset on something that is not an HTML element"
+      );
+    }
     const box = element.getBoundingClientRect();
     const client = {
       top: document.documentElement.clientTop,
@@ -149,7 +153,7 @@ export const getOffset = (element) => {
  */
 export const doesExist = (element) => {
   try {
-    if (typeof element !== "undefined" && element != null ) return true;
+    if (typeof element !== "undefined" && element != null) return true;
     else if (element instanceof HTMLElement === false) return false;
     else return false;
   } catch (error) {
@@ -168,7 +172,9 @@ export const fadeOut = (element, ms) => {
       throw new Error("Invalid argument was given to the fade out animation");
     }
     if (element instanceof HTMLElement === false) {
-      throw new Error("Could not animate something that is not an HTML element");
+      throw new Error(
+        "Could not animate something that is not an HTML element"
+      );
     }
     element.style.transition = `opacity ${ms} ms`;
     element.addEventListener(
