@@ -89,3 +89,85 @@ describe("validateName", function () {
         expect(validateName("John", "Doe Smith")).toBe(true);
     });
 });
+
+import { generateRandomNumberInRange } from "../Tools";
+
+describe("generateRandomNumberInRange", function () {
+  test("does return an integer", function () {
+    expect(typeof generateRandomNumberInRange(1, 10)).toBe("number");
+  });
+
+  test("does return a number in the given range", function () {
+    const randomNumber = generateRandomNumberInRange(1, 10);
+    expect(randomNumber).toBeGreaterThanOrEqual(1);
+    expect(randomNumber).toBeLessThanOrEqual(10);
+  });
+
+  test("throws an error if a non-number input value is given", function () {
+    expect(generateRandomNumberInRange("a", "b")).toBe(undefined);
+  });
+
+  test("throws an error if minimum value is greater than maximum", 
+    function () {
+      expect(generateRandomNumberInRange(10, 1)).toBe(undefined);
+    });
+
+  test("throws an error if minimum value is equal to maximum", function () {
+    expect(generateRandomNumberInRange(1, 1)).toBe(undefined);
+  });
+
+  test("does not throw an error with correct input values", function () {
+    expect(generateRandomNumberInRange(1, 10)).not.toBe(undefined);
+  });
+});
+
+import { reverseString } from "../Tools";
+
+describe("reverseString", function () {
+  test("reverses given string", function () {
+    expect(reverseString("Hello World!")).toBe("!dlroW olleH");
+  });
+
+  test("returns an empty string being passed an empty string", function () {
+    expect(reverseString("")).toBe("");
+  });
+
+  test("returns a single character being passed a single character", 
+    function() {
+      expect(reverseString("a")).toBe("a");
+    });
+
+  test("reverses a string with special characters", function () {
+    expect(reverseString("Hello World!")).toBe("!dlroW olleH");
+  });
+
+  test("throws an error given a non-string value", function () {
+    expect(reverseString(13)).toBe(undefined);
+  });
+});
+
+import { getRandomElement } from "../Tools";
+
+describe("getRandomElement", function () {
+  test("returns a random element from an array every time", function () {
+    const array = [1, 2, 3, 4, 5, 6];
+    expect(getRandomElement(array)).not.toBe(getRandomElement(array));
+  });
+
+  test("returns one of the elements from given array", function () {
+    const array = [1, 2, 3, 4, 5, 6];
+    expect(array).toContain(getRandomElement(array));
+  });
+
+  test("throws an error given an empty array", function () {
+    expect(getRandomElement([])).toBe(undefined);
+  });
+
+  test("throws an error given a non-array value", function () {
+    expect(getRandomElement(13)).toBe(undefined);
+  });
+
+  test("returns the only element given a single element array", function () {
+    expect(getRandomElement([13])).toBe(13);
+  });
+});
