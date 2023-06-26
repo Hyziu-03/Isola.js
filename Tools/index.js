@@ -37,9 +37,10 @@ export const shuffleArray = (array) => {
  */
 export const sleep = (ms) => {
   try {
-    if(typeof ms !== "number") {
-      throw new Error("Could not set a promise to resolve in a non-number value");
-    }
+    if(typeof ms !== "number") 
+      throw new Error(
+        "Could not set a promise to resolve in a non-number value"
+      );
     return new Promise((resolve) => setTimeout(resolve, ms));
   } catch (error) {
     console.error(error);
@@ -57,8 +58,10 @@ export const validateName = (firstName, lastName) => {
     const containsLetters = /[a-zA-Z]/g;
     const containsNumbers = /\d/g;
 
-    const isNotAlphabetical = containsLetters.test(firstName) === false || containsLetters.test(lastName) === false;
-    const isNumerical = containsNumbers.test(firstName) || containsNumbers.test(lastName);
+    const isNotAlphabetical = containsLetters.test(firstName) === false || 
+      containsLetters.test(lastName) === false;
+    const isNumerical = containsNumbers.test(firstName) || 
+      containsNumbers.test(lastName);
     
     if(isNotAlphabetical || isNumerical) return false;
     else return !!firstName && !!lastName;
@@ -77,12 +80,14 @@ export const validateName = (firstName, lastName) => {
  */
 export const generateRandomNumberInRange = (minimum, maximum) => {
   try {
-    if(typeof minimum !== "number" || typeof maximum !== "number") {
-      throw new Error("Could not generate a random number in a non-number range");
-    }
-    if(minimum > maximum) {
+    if(typeof minimum !== "number" || typeof maximum !== "number") 
+      throw new Error(
+        "Could not generate a random number in a non-number range"
+      );
+    if(minimum > maximum) 
       throw new Error("Invalid number range was given");
-    }
+    if(minimum === maximum)
+      throw new Error("Invalid number range was given");
     const randomNumberInRange =
       Math.floor(Math.random() * (maximum - minimum) + 1) + minimum;
     return randomNumberInRange;
@@ -111,9 +116,11 @@ export const reverseString = (string) => {
  */
 export const getRandomElement = (array) => {
   try {
-    if(array instanceof Array === false || array.length === 0) {
-      throw new Error("Could not get a random element from an empty array or a non-array value");
-    }
+    if(array instanceof Array === false || array.length === 0) 
+      throw new Error(
+        "Could not get a random element from an empty array or a non-array \
+        value"
+      );
     const index = Math.floor(Math.random() * array.length);
     return array[index];
   } catch (error) {
@@ -150,14 +157,27 @@ export const getTime = () => {
  */
 export const validatePassword = (password) => {
   try {
-    const isStrong = validator.isStrongPassword(password, {
-      minLength: 9,
-      minUppercase: 1,
-      minLowercase: 1,
-      minNumbers: 1,
-      minSymbols: 1,
-    });
-    return isStrong;
+    function check(characters) {
+      for (let i = 0; i < password.length; i++) {
+        if (characters.includes(password[i])) break;
+        if (i === password.length - 1) return false;
+      }
+    }
+
+    const symbols = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+    const numbers = "0123456789";
+    const lowercase = "abcdefghijklmnopqrstuvwxyz";
+    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
+    const hasEnoughSymbols = check(symbols) !== false;
+    const hasEnoughNumbers = check(numbers) !== false;
+    const hasEnoughLowercase = check(lowercase) !== false;
+    const hasEnoughUppercase = check(uppercase) !== false;
+    const isLongEnough = password.length >= 9;
+
+    if(hasEnoughSymbols && hasEnoughNumbers && hasEnoughLowercase && 
+      hasEnoughUppercase && isLongEnough) return true;
+    else return false;
   } catch (error) {
     console.error(error);
   }
@@ -202,9 +222,10 @@ export const getEmailDomain = (email) => {
  */
 export const removeDuplicates = (array) => {
   try {
-    if (array instanceof Array === false || array.length === 0) {
-      throw new Error("Could not remove duplicates from an empty array or a non-array value");
-    }
+    if (array instanceof Array === false || array.length === 0)
+      throw new Error(
+        "Could not remove duplicates from an empty array or a non-array value"
+      );
     return [...new Set(array)];
   } catch (error) {
     console.error(error);
@@ -218,9 +239,10 @@ export const removeDuplicates = (array) => {
  */
 export const generateOTP = (length) => {
   try {
-    if(typeof length !== "number") {
-      throw new Error("Could not generate a one-time-password with a non-number length");
-    }
+    if(typeof length !== "number")
+      throw new Error(
+        "Could not generate a one-time-password with a non-number length"
+      );
     let otp = "";
     const digits = "0123456789";
     for (let i = 0; i < length; i++) {
