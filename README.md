@@ -1,5 +1,7 @@
 # Isola.js
 
+> No longer maintained
+
 A web development oriented multi purpose JavaScript library. Created by Szymon Hyziak. Read up on it here: <https://isolajs.web.app>
 
 > It was time for Isola.js from July 9th 2022 to March 20th 2023.
